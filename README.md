@@ -1,1 +1,1 @@
- * [http://love2d.org/](LÖVE)
+ * [LÖVE](http://love2d.org/)
