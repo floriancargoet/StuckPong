@@ -12,7 +12,7 @@ end
 
 function main:keyreleased(key)
     if key == 'q' then
-        game:quit() -- bad. do not use globals. use events.
+        self:exit()
     end
 end
 

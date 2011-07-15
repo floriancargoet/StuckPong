@@ -1,4 +1,8 @@
+require "utils"
+
 Screen = {}
+
+Observable:mixin(Screen)
 
 function Screen:create(screen)
     -- here self = class
@@ -6,6 +10,10 @@ function Screen:create(screen)
     setmetatable(screen, self)
     self.__index = self
     return screen
+end
+
+function Screen:exit()
+    self:trigger('exit')
 end
 
 function Screen:init()

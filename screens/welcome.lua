@@ -12,7 +12,8 @@ end
 
 function welcome:keyreleased(key)
     -- any key is fine
-    game:gotoScreen('mainmenu') -- bad. do not use globals. use events.
+    --game:gotoScreen('mainmenu') -- bad. do not use globals. use events.
+    self:exit()
 end
 
 return welcome

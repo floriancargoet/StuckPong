@@ -1,10 +1,11 @@
 require "game"
 
-game = Game:create()
+local game    = Game:create()
+game:declareScreens('welcome', 'mainmenu') -- bad system. I need a nested screens system
 
 -- delegate everything
 function love.load()
-    game:gotoScreen('welcome')
+    game:start() -- load the first screen
 end
 
 function love.keypressed(key)
