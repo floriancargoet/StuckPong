@@ -1,6 +1,7 @@
 require "utils"
 
 Screen = {}
+Screen.__index = Screen
 
 Observable:mixin(Screen)
 
@@ -8,7 +9,6 @@ function Screen:create(screen)
     -- here self = class
     screen = screen or {}
     setmetatable(screen, self)
-    self.__index = self
     return screen
 end
 

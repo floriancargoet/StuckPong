@@ -2,13 +2,12 @@
 -- Game class
 
 Game = {}
-
+Game.__index = Game
 -- constructor
 function Game:create(game)
     -- here self = class
     game = game or {}
     setmetatable(game, self)
-    self.__index = self
     game.screens = {}
 
     game.currentScreen = nil
