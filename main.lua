@@ -1,4 +1,4 @@
-require "game"
+require 'game'
 
 local game    = Game:create()
 local showFPS = true
@@ -32,7 +32,7 @@ end
 function love.draw()
     game:draw()
     if showFPS then
-        love.graphics.print("FPS: "..love.timer.getFPS(), 0, 0)
+        love.graphics.print('FPS: '..love.timer.getFPS(), 0, 0)
     end
 
     --max 60 fps

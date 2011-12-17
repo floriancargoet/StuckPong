@@ -1,9 +1,9 @@
-require "screen"
+require 'screen'
 
 local main = Screen:create()
 
 function main:init()
-    self.bg = love.graphics.newImage("img/main.png")
+    self.bg = love.graphics.newImage('img/main.png')
 end
 
 function main:draw()

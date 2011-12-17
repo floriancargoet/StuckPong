@@ -1,9 +1,9 @@
-require "screen"
+require 'screen'
 
 local welcome = Screen:create()
 
 function welcome:init()
-    self.bg = love.graphics.newImage("img/welcome.png")
+    self.bg = love.graphics.newImage('img/welcome.png')
 end
 
 function welcome:draw()
@@ -12,7 +12,6 @@ end
 
 function welcome:keyreleased(key)
     -- any key is fine
-    --game:gotoScreen('mainmenu') -- bad. do not use globals. use events.
     self:exit()
 end
 

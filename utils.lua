@@ -34,7 +34,6 @@ end
 
 
 -- an Observable mixin
--- see usage in commented code below
 
 Observable = Mixin:create()
 
