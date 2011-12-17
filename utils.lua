@@ -63,5 +63,3 @@ function Observable:trigger(event, ...) -- type: any, ...
         end
     end
 end
-
-    
