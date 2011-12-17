@@ -1,8 +1,9 @@
 require 'game'
 
-local game    = Game:create()
-local showFPS = true
-local maxDt   = 16 -- ~= 1000/60
+local game     = Game:create()
+local showFPS  = true
+local showMore = true
+local maxDt    = 16 -- ~= 1000/60
 
 game:declareScreens('welcome', 'mainmenu') -- bad system. I need a nested screens system
 
@@ -20,6 +21,8 @@ function love.keyreleased(key)
         game:quit()
     elseif key == 'f3' then
         showFPS = not showFPS
+    elseif key == 'f4' then
+        showMore = not showMore
     else
         game:keyreleased(key)
     end
@@ -33,6 +36,10 @@ function love.draw()
     game:draw()
     if showFPS then
         love.graphics.print('FPS: '..love.timer.getFPS(), 0, 0)
+    end
+    if showMore then
+        local x, y = love.mouse.getPosition()
+        love.graphics.print('Mouse: '..x..', '..y, 0, 20)
     end
 
     --max 60 fps
