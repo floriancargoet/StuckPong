@@ -1,18 +1,12 @@
+require 'oo'
 
 -- Game class
+Game = Object:subclass()
 
-Game = {}
-Game.__index = Game
--- constructor
-function Game:create(game)
-    -- here self = class
-    game = game or {}
-    setmetatable(game, self)
-
-    game.loadedStates = {}
-    game.stateStack   = {}
-    game.currentState = nil -- quick access to the top state
-    return game
+function Game:constructor()
+    self.loadedStates = {}
+    self.stateStack   = {}
+    self.currentState = nil -- quick access to the top state
 end
 
 function Game:start(stateName)

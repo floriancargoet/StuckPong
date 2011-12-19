@@ -1,6 +1,6 @@
 require 'state'
 
-local welcome = State:create()
+local welcome = State:new()
 
 function welcome:init()
     self.bg = love.graphics.newImage('img/welcome.png')

@@ -1,6 +1,6 @@
 require 'game'
 
-local game     = Game:create()
+local game     = Game:new()
 local showFPS  = true
 local showMore = true
 local maxDt    = 16 -- ~= 1000/60

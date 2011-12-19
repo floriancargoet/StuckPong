@@ -1,6 +1,6 @@
 require 'state'
 
-local main = State:create()
+local main = State:new()
 
 function main:init()
     self.bg = love.graphics.newImage('img/main.png')

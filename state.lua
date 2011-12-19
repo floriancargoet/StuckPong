@@ -1,16 +1,9 @@
+require 'oo'
 require 'utils'
 
-State = {}
-State.__index = State
+State = Object:subclass()
 
 Observable:mixin(State)
-
-function State:create(state)
-    -- here self = class
-    state = state or {}
-    setmetatable(state, self)
-    return state
-end
 
 function State:exit()
     self:trigger('exit')
