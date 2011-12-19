@@ -5,11 +5,9 @@ local showFPS  = true
 local showMore = true
 local maxDt    = 16 -- ~= 1000/60
 
-game:declareScreens('welcome', 'mainmenu') -- bad system. I need a nested screens system
-
 -- delegate everything
 function love.load()
-    game:start() -- load the first screen
+    game:start('welcome') -- load the first screen
 end
 
 function love.keypressed(key)

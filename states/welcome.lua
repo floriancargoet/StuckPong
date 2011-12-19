@@ -1,6 +1,6 @@
-require 'screen'
+require 'state'
 
-local welcome = Screen:create()
+local welcome = State:create()
 
 function welcome:init()
     self.bg = love.graphics.newImage('img/welcome.png')
@@ -11,8 +11,11 @@ function welcome:draw()
 end
 
 function welcome:keyreleased(key)
-    -- any key is fine
-    self:exit()
+    if key == 'q' then
+        self.game:quit()
+    else
+        self.game:pushState('mainmenu')
+    end
 end
 
 return welcome

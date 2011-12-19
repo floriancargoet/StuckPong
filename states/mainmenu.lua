@@ -1,6 +1,6 @@
-require 'screen'
+require 'state'
 
-local main = Screen:create()
+local main = State:create()
 
 function main:init()
     self.bg = love.graphics.newImage('img/main.png')
@@ -12,7 +12,7 @@ end
 
 function main:keyreleased(key)
     if key == 'q' then
-        self:exit()
+        self.game:quit()
     end
 end
 
