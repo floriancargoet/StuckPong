@@ -1,16 +1,19 @@
 require 'state'
 
-local welcome = State:new()
+local WelcomeScreen = State:subclass()
 
-function welcome:init()
+function WelcomeScreen:init()
+    WelcomeScreen.super.init(self)
     self.bg = love.graphics.newImage('img/welcome.png')
 end
 
-function welcome:draw()
+function WelcomeScreen:draw()
+    WelcomeScreen.super.draw(self)
     love.graphics.draw(self.bg, 0, 0)
 end
 
-function welcome:keyreleased(key)
+function WelcomeScreen:keyreleased(key)
+    WelcomeScreen.super.keyreleased(self)
     if key == 'q' then
         self.game:quit()
     else
@@ -18,4 +21,4 @@ function welcome:keyreleased(key)
     end
 end
 
-return welcome
+return WelcomeScreen:new()

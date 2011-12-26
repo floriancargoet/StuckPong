@@ -1,19 +1,22 @@
 require 'state'
 
-local main = State:new()
+local MainMenu = State:subclass()
 
-function main:init()
+function MainMenu:init()
+    MainMenu.super.init(self)
     self.bg = love.graphics.newImage('img/main.png')
 end
 
-function main:draw()
+function MainMenu:draw()
+    MainMenu.super.draw(self)
     love.graphics.draw(self.bg, 0, 0)
 end
 
-function main:keyreleased(key)
+function MainMenu:keyreleased(key)
+    MainMenu.super.keyreleased(self, key)
     if key == 'q' then
         self.game:quit()
     end
 end
 
-return main
+return MainMenu:new()
