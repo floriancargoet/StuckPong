@@ -2,6 +2,7 @@ require 'oo'
 require 'utils'
 
 State = Object:subclass()
+State.ignoreInput = false
 
 Observable:mixin(State)
 

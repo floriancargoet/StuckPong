@@ -1,12 +1,14 @@
 require 'game'
 
-local game     = Game:new()
 local showFPS  = true
 local showMore = true
 local maxDt    = 16 -- ~= 1000/60
+local game
 
 -- delegate everything
 function love.load()
+    local w, h = love.graphics.getWidth(), love.graphics.getHeight()
+    game = Game:new(w, h) -- give it screen size
     game:start('welcome') -- load the first screen
 end
 

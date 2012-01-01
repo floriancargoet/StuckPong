@@ -12,12 +12,17 @@ function WelcomeScreen:draw()
     love.graphics.draw(self.bg, 0, 0)
 end
 
+function WelcomeScreen:reset()
+    self.ignoreInput = false
+end
+
 function WelcomeScreen:keyreleased(key)
     WelcomeScreen.super.keyreleased(self)
     if key == 'q' then
         self.game:quit()
     else
-        self.game:pushState('mainmenu')
+        self.ignoreInput = true
+        self.game:transition('slide', 'mainmenu')
     end
 end
 
